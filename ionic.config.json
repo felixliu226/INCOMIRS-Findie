@@ -1,0 +1,12 @@
+{
+  "name": "Findie",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/~kf_prj/incomirs/api/",
+      "proxyUrl": "http://www1.se.cuhk.edu.hk/~kf_prj/incomirs/api/"
+    }
+  ],
+  "v2": true,
+  "typescript": true
+}

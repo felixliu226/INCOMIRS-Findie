@@ -9,7 +9,7 @@ export class RestaurantData{
 
     constructor(http:Http){
     this.http = http;
-    this.baseUrl = 'http://www1.se.cuhk.edu.hk/~kf_prj/incomirs/api/';
+    this.baseUrl = '/~kf_prj/incomirs/api/';
 
     }
     getRestaurants(cuisine){
