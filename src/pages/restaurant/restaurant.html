@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="main">
+    <ion-title text-center>
+      Restaurant
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar color="main">
+  <ion-searchbar (ionFocus)="filterPage()">
+  </ion-searchbar>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <ion-list>
+
+    <div *ngIf="search!=NULL">
+      <ion-item>
+        Search result for: {{search}}
+      </ion-item>
+    </div>
+    <ion-item (click)="viewDetail(item)" *ngFor="let item of items" class="item-thumbnail-left" text-wrap>
+      <ion-thumbnail item-left>
+          <img src={{item.pic_url}}>
+      </ion-thumbnail>
+      <h3>{{item.name}}</h3>
+      <ion-icon name="happy"></ion-icon>&nbsp;&nbsp;{{item.happy_face}}
+      <ion-icon name="home"></ion-icon>&nbsp;&nbsp;{{item.ok_face}}
+      <ion-icon name="sad"></ion-icon>&nbsp;&nbsp;{{item.sad_face}}
+      <p>
+        <ion-icon name="pin"></ion-icon>&nbsp;&nbsp;{{item.district}}&nbsp;&nbsp;&nbsp;&nbsp;
+        <ion-icon name="apps"></ion-icon>&nbsp;&nbsp;{{item.cuisine}}
+      </p>
+      <div *ngIf="item.recommended_from!=null">
+      <p class="wrap" id="recommendation">
+        <ion-icon name="thumbs-up"></ion-icon>
+        Recommended from {{item.recommended_from}}
+      </p>
+    </div>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

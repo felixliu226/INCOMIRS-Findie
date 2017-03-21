@@ -1,0 +1,53 @@
+page-details {
+  .ion-md-happy:before{
+    content:url(../assets/img/happy.png)!important;
+  }
+  .ion-md-home:before{
+    content:url(../assets/img/ok.png)!important;
+  }
+  .ion-md-sad:before{
+    content:url(../assets/img/sad.png)!important;
+  }
+  .ion-md-pin:before{
+    content:url(../assets/img/district.png)!important;
+  }
+  .ion-md-apps:before{
+    content:url(../assets/img/cuisine.png)!important;
+  }
+  .ion-md-usd:before{
+      content:url(../assets/img/price.png)!important;
+  }
+  .ion-md-beer:before{
+        content:url(../assets/img/openrice.png)!important;
+  }
+  .ion-ios-happy:before{
+    content:url(../assets/img/happy.png)!important;
+  }
+  .ion-ios-home:before{
+    content:url(../assets/img/ok.png)!important;
+  }
+  .ion-ios-sad:before{
+    content:url(../assets/img/sad.png)!important;
+  }
+  .ion-ios-pin:before{
+    content:url(../assets/img/district.png)!important;
+  }
+  .ion-ios-apps:before{
+    content:url(../assets/img/cuisine.png)!important;
+  }
+  .ion-ios-usd:before{
+      content:url(../assets/img/price.png)!important;
+  }
+  .ion-ios-beer:before{
+        content:url(../assets/img/openrice.png)!important;
+  }
+  .information{
+    padding-left: 20px;
+  }
+  #openrice{
+    text-decoration: none;
+  }
+  .background{
+    background-image: url(../assets/img/background2.png);
+  }
+}

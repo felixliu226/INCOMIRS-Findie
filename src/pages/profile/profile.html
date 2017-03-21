@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="main">
+    <ion-title text-center>
+      Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="background" *ngIf='userReady'>
+  <ion-card>
+    <br><br>
+     <ion-avatar class="profile">
+       <img src={{user.picture}}>
+     </ion-avatar><br>
+     <h2 text-center>{{user.name}}</h2><br>
+     <p></p>
+     <br><br>
+   </ion-card>
+   <br><br>
+   <button ion-button id="button" color="facebook" block (click)="doFbLogout()" >
+     <ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;Log Out
+   </button>
+</ion-content>
+
+<ion-content padding class="background" *ngIf='!userReady'>
+  <ion-card>
+    <br><br>
+    <ion-avatar class="profile">
+      <img src='assets/img/user.png' />
+    </ion-avatar><br>
+    <p>You have not logged in yet.</p>
+    <br><br>
+  </ion-card>
+  <br><br>
+  <button ion-button id="button" color="facebook" block (click)="doFbLogin()" >
+    <ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;Log In
+  </button>
+</ion-content>

@@ -1,0 +1,40 @@
+page-restaurant {
+.wrap {
+white-space: normal;
+}
+.face{
+  font-size:20px;
+}
+#recommendation{
+  border-top:1px solid lightgrey;
+  padding-top: 8px;
+}
+
+.ion-md-happy:before{
+  content:url(../assets/img/happy.png)!important;
+}
+.ion-md-home:before{
+  content:url(../assets/img/ok.png)!important;
+}
+.ion-md-sad:before{
+  content:url(../assets/img/sad.png)!important;
+}
+.ion-md-thumbs-up:before{
+  content:url(../assets/img/like.png)!important;
+}
+.ion-ios-happy:before{
+  content:url(../assets/img/happy.png)!important;
+}
+.ion-ios-home:before{
+  content:url(../assets/img/ok.png)!important;
+}
+.ion-ios-sad:before{
+  content:url(../assets/img/sad.png)!important;
+}
+.ion-ios-thumbs-up:before{
+  content:url(../assets/img/like.png)!important;
+}
+.background{
+  background-image: url(../assets/img/background2.png);
+}
+}

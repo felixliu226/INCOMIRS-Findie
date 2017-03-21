@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="main">
+    <ion-title>
+      {{item.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content Padding class="background">
+  <ion-list>
+    <ion-item text-wrap>
+      <ion-thumbnail item-left>
+        <img src={{item.pic_url}}>
+      </ion-thumbnail>
+      <h3>{{item.name}}</h3>
+      <ion-icon name="happy"></ion-icon>&nbsp;&nbsp;{{item.happy_face}}
+      <ion-icon name="home"></ion-icon>&nbsp;&nbsp;{{item.ok_face}}
+      <ion-icon name="sad"></ion-icon>&nbsp;&nbsp;{{item.sad_face}}
+    </ion-item>
+    <ion-item>
+      Rating: {{item.rating}} ({{item.number_of_rating}})
+    </ion-item>
+    <ion-item>
+      <table>
+        <tr>
+          <td><ion-icon name="pin"></ion-icon></td>
+          <td class="information">{{item.district}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="information">{{item.geography}}</td>
+        </tr>
+        <tr>
+          <td><ion-icon name="apps"></ion-icon></td>
+          <td class="information">{{item.cuisine}}</td>
+        </tr>
+        <tr>
+          <td><ion-icon name="usd"></ion-icon></td>
+          <td class="information">{{item.average_price}}</td>
+        </tr>
+      </table>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="beer"></ion-icon>
+      <a href={{item.url}} id="openrice">&nbsp;&nbsp;Click to OpenRice URL</a>
+    </ion-item>
+    <div *ngIf="item.recommended_from!=null">
+    <ion-item text-wrap>
+      Recommended from <ion-icon name="logo-facebook" color="facebook" style="font-size:30px"></ion-icon><br>
+      <ion-thumbnail item-left>
+        <img src={{item.pic_url}}>
+      </ion-thumbnail>
+      <h3>Your Friend Name</h3>
+      <p>The message of the post send by your friend which mentioned this restaurant.</p>
+    </ion-item>
+  </div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,18 @@
+page-profile {
+  .background{
+    background-image: url(../assets/img/background2.png);
+  }
+  .profile  {
+    max-width: 100px !important;
+    max-height: 100px !important;
+    margin:auto;
+  }
+  p{
+    text-align: center;
+  }
+  #button{
+    text-transform: none;
+    width:90%;
+    margin:auto;
+  }
+}

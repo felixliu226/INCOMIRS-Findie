@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="main">
+    <ion-searchbar value={{selected}}></ion-searchbar>
+    <!-- <ion-searchbar [(ngModel)]="selected"></ion-searchbar> -->
+    <button ion-button color="primary" class="button" (click)="applyFilter()">Apply Filter</button>
+    <button ion-button color="yellow" class="button" [navPush]="restaurantPage">Cancel</button>
+</ion-toolbar>
+
+</ion-header>
+<ion-content padding class="background">
+  <ion-segment [(ngModel)]="category" color="primary">
+    <ion-segment-button value="district">
+      District
+    </ion-segment-button>
+    <ion-segment-button value="cuisine">
+      Cuisine
+    </ion-segment-button>
+  </ion-segment>
+<div [ngSwitch]="category">
+  <ion-list *ngSwitchCase="'district'">
+    <ion-item class='listHeader' no-lines>香港島</ion-item>
+    <div *ngFor="let district of districtList">
+    <ion-item *ngIf="district.region==1" (click)="show(district)">
+      {{ district.area }}
+    </ion-item>
+    <div *ngIf="district.showDetails">
+      <div *ngIf=" district.region==1">
+      <ion-item *ngFor="let a of district.locations">
+        <ion-label>{{a}}</ion-label>
+        <ion-checkbox [(ngModel)]="dist[a]" (click)="addSearch(a)" color="main"></ion-checkbox>
+      </ion-item>
+      </div>
+    </div>
+    </div>
+    <ion-item class='listHeader' no-lines>九龍</ion-item>
+    <div *ngFor="let district of districtList">
+    <ion-item *ngIf="district.region==2" (click)="show(district)">
+      {{ district.area }}
+    </ion-item>
+    <div *ngIf="district.showDetails">
+      <div *ngIf=" district.region==2">
+      <ion-item *ngFor="let b of district.locations">
+        <ion-label>{{b}}</ion-label>
+        <ion-checkbox [(ngModel)]="dist[b]" (click)="addSearch(b)" color="main"></ion-checkbox>
+      </ion-item>
+      </div>
+    </div>
+    </div>
+    <ion-item class='listHeader' no-lines>新界</ion-item>
+    <div *ngFor="let district of districtList">
+    <ion-item *ngIf="district.region==3" (click)="show(district)">
+      {{ district.area }}
+    </ion-item>
+    <div *ngIf="district.showDetails">
+    <div *ngIf=" district.region==3">
+      <ion-item *ngFor="let c of district.locations">
+        <ion-label>{{c}}</ion-label>
+        <ion-checkbox [(ngModel)]="dist[c]" (click)="addSearch(c)" color="main"></ion-checkbox>
+    </ion-item>
+    </div>
+  </div>
+    </div>
+  </ion-list>
+</div>
+
+<div [ngSwitch]="category">
+ <ion-list *ngSwitchCase="'cuisine'" >
+  <div *ngFor="let cuisine of cuisineList">
+   <ion-item (click)="show(cuisine)">
+     {{ cuisine.category }}
+   </ion-item>
+   <div *ngIf="cuisine.showDetails">
+     <ion-item *ngFor="let d of cuisine.cuisines">
+       <ion-label>{{d}}</ion-label>
+       <ion-checkbox [(ngModel)]="cuis[d]" (click)="addSearch(d)" color="main"></ion-checkbox>
+   </ion-item>
+   </div>
+  </div>
+ </ion-list>
+ </div>
+</ion-content>
